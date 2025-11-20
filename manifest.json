@@ -35,6 +35,14 @@
     ],
     "persistent": true
   },
+  "commands": {
+    "disabled": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Toggle Redirector On/Off"
+    }
+  },
   "options_ui": {
     "page": "popup.html",
     "chrome_style": true

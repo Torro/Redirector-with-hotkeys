@@ -470,3 +470,13 @@ function handleStartup(){
 	let darkModeMql = window.matchMedia('(prefers-color-scheme: dark)');
 	darkModeMql.onchange = updateIcon;
 }
+
+chrome.commands.onCommand.addListener((command) => {
+	var storage = chrome.storage.local;
+	var viewModel = {}; //Just an object for the databinding
+	storage.get({ [command]: false }, function (obj) {
+		storage.set({ [command]: !obj[command] });
+		viewModel[command] = !obj[command];
+		applyBinding();
+	});
+});
